@@ -4,6 +4,7 @@ import fr.atos.tp2.bean.Commande;
 import fr.atos.tp2.bean.Paiement;
 import fr.atos.tp2.dao.PaiementDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,10 @@ public class PaiementService {
 
     @Autowired
     private CommandeService commandeService;
+    
+    public List<Paiement> findByMontantSuperieur(double montant) {
+        return paiementDao.findByMontantSuperieur(montant);
+    }
 
     @Autowired
     private PaiementDao paiementDao;

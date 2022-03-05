@@ -3,6 +3,7 @@ package fr.atos.tp2.service;
 import fr.atos.tp2.bean.Commande;
 import fr.atos.tp2.dao.CommandeDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,5 +45,9 @@ public class CommandeService {
 
     public List<Commande> findAll() {
         return commandeDao.findAll();
+    }
+    
+    public List<Commande> findFinalise() {
+        return commandeDao.findFinalise();
     }
 }

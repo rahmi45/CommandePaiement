@@ -35,4 +35,9 @@ public class PaiementProvided {
         return paiementService.findAll();
     }
 
+    @GetMapping("/montant-greater-than/{montant}")
+    public List<Paiement> findByMontantSuperieur(@PathVariable double montant) {
+        return paiementService.findByMontantSuperieur(montant);
+    }
+
 }

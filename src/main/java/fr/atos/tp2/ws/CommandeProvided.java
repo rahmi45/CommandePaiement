@@ -37,5 +37,9 @@ public class CommandeProvided {
     public List<Commande> findAll() {
         return commandeService.findAll();
     }
+    @GetMapping("/finalise")
+    public List<Commande> findFinalise() {
+        return commandeService.findFinalise();
+    }
 
 }
