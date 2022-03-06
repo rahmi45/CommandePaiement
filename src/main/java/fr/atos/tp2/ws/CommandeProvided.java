@@ -1,6 +1,7 @@
 package fr.atos.tp2.ws;
 
 import fr.atos.tp2.bean.Commande;
+import fr.atos.tp2.dto.CommandeTdo;
 import fr.atos.tp2.service.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,8 @@ public class CommandeProvided {
     public List<Commande> findFinalise() {
         return commandeService.findFinalise();
     }
-
+    @PostMapping("/criteria")
+    public List<Commande> findByCriteria(@RequestBody CommandeTdo commandeTdo) {
+        return commandeService.findByCriteria(commandeTdo);
+    }
 }
